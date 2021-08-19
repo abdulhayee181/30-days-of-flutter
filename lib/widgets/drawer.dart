@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class MyDrawer extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    print("shgdfgsdjfh");
     final imageurl =
     "https://itchronicles.com/wp-content/uploads/2021/01/technology-impact-on-life-1024x566.jpg";
   return Drawer(
