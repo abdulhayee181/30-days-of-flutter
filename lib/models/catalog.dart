@@ -1,16 +1,37 @@
+
+import 'package:flutter/cupertino.dart';
+
 class CatalogModel {
-  static final items = [
-    Item(1, "red", "I phone 12", "i phone boht chnga hai", 999, "https://freepngimg.com/thumb/samsung_mobile_phone/5-2-samsung-mobile-phone-png-hd.png"),
+  static  List<Item> items = [
+    Item(id:1,name: "red", desc: "I phone 12",price: 999,colour:"i phone boht chnga hai",image: "https://freepngimg.com/thumb/samsung_mobile_phone/5-2-samsung-mobile-phone-png-hd.png"),
   ];
 }
 
 class Item {
-  final int id;
-  final String color;
-  final String name;
-  final String desc;
-  final num price;
-  final String iamge;
+  final  id;
+  final   name;
+  final  desc;
+  final  price;
+  final  colour;
+  final  image;
 
-  Item(this.id, this.color, this.name, this.desc, this.price, this.iamge);
+
+  Item({ @required this.id, this.name, this.desc, this.price, this.colour, this.image});
+   factory Item.fromMap(Map<String,dynamic>map){
+    return Item( 
+       id: map["id"],
+       name: map["name"],
+       desc: map["desc"],
+       price: map["price"],
+       colour: map["colour"],
+       image: map["image"],);
+   }
+   toMap()=>{
+     "id":id,
+     "name":name,
+     "desc":desc,
+     "price":price,
+     "colour":colour,
+     "image":image,
+   };
 }
